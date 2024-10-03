@@ -6,7 +6,8 @@ const DICTIONARY = {
         CHOICE1: "1. Play Game",
         CHOICE2: "2. Settings",
         CHOICE3: "3. Exit game",
-        PLASS: "Place your mark at: "
+        PLASS: "Place your mark at: ",
+        GAMEOVER: "Game over"
     },
     },
     no: {
@@ -15,7 +16,8 @@ const DICTIONARY = {
         CHOICE1: "1. Spill",
         CHOICE2: "2. Innstillinger",
         CHOICE3: "3. Avslutt spill",
-        PLASS: "Velg plassering:"
+        PLASS: "Velg plassering:",
+        GAMEOVER: "Spillet er over"
     }
 }
 
