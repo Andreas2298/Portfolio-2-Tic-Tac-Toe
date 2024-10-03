@@ -12,7 +12,9 @@ const PLAYER_2 = -1;
 const MENU_CHOICES = {
     MENU_CHOICE_START_GAME: 1,
     MENU_CHOICE_SHOW_SETTINGS: 2,
-    MENU_CHOICE_EXIT_GAME: 3
+    MENU_CHOICE_EXIT_GAME: 3,
+    MENU_CHOICE_LAN_EN: 4,
+    MENU_CHOICE_LAN_NO: 5
 };
 
 const NO_CHOICE = -1;
@@ -40,10 +42,13 @@ async function start() {
         if (chosenAction == MENU_CHOICES.MENU_CHOICE_START_GAME) {
             await runGame();
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS) {
-            ///TODO: Needs implementing
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_EXIT_GAME) {
             clearScreen();
-            process.exit();
+           process.exit();
+        } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_EN){
+            langChoice(chosenAction);
+        } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_NO){
+            langChoice(chosenAction);
         }
 
     } while (true)
