@@ -166,6 +166,17 @@ function evaluateGameState() {
         sum = 0;
     }
 
+
+ for (let row = 0; row < GAME_BOARD_SIZE; row++) {
+        let col = row;
+        sum += gameboard[row][col];
+    }
+    if (Math.abs(sum) == GAME_BOARD_SIZE) {
+        state = sum;
+    }
+    sum = 0;
+
+    
     let winner = state / 3;
     return winner;
 }
