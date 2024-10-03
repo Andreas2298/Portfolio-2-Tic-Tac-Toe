@@ -27,11 +27,19 @@ let currentPlayer;
 clearScreen();
 showSplashScreen();
 setTimeout(start, 2500); // This waites 2.5seconds before calling the function. i.e. we get to see the splash screen for 2.5 seconds before the menue takes over. 
-
+langChoice(1);
 
 
 //#region game functions -----------------------------
-
+async function langChoice(x){
+    if (x==4) {
+        language = DICTIONARY.en;
+    }
+    if (x==5) {
+        language = DICTIONARY.no;
+    }
+    
+}
 async function start() {
 
     do {
