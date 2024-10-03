@@ -197,9 +197,11 @@ function updateGameBoardState(move) {
 
 async function getGameMoveFromtCurrentPlayer() {
     let position = null;
-    do {
-        let rawInput = await askQuestion("Place your mark at: ");
+     do {
+        let rawInput = await askQuestion(language.PLASS);
         position = rawInput.split(" ");
+        position[0] = position[0]-1           
+        position[1] = position[1]-1
     } while (isValidPositionOnBoard(position) == false)
 
     return position
