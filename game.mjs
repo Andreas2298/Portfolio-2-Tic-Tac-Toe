@@ -5,6 +5,7 @@ import DICTIONARY from "./language.mjs";
 import showSplashScreen from "./splash.mjs";
 
 const GAME_BOARD_SIZE = 3;
+const WIN_SUM = 3;
 const PLAYER_1 = 1;
 const PLAYER_2 = -1;
 
@@ -147,6 +148,7 @@ function changeCurrentPlayer() {
     currentPlayer (currentPlayer == PLAYER_ONE) ? PLAYER_TWO : PLAYER_ONE;
 }
 
+
 function evaluateGameState() {
     let sum = 0;
     let state = 0;
@@ -157,7 +159,7 @@ function evaluateGameState() {
             sum += gameboard[row][col];
         }
 
-        if (Math.abs(sum) == 3) {
+        if (Math.abs(sum) == WINSUM) {
             state = sum;
         }
         sum = 0;
@@ -169,7 +171,7 @@ function evaluateGameState() {
             sum += gameboard[row][col];
         }
 
-        if (Math.abs(sum) == 3) {
+        if (Math.abs(sum) == WIN_SUM) {
             state = sum;
         }
 
@@ -195,7 +197,7 @@ function evaluateGameState() {
     }
     
     sum = 0;
-    let winner = state / 3;
+    let winner = state / WIN_SUM;
     return winner;
 }
 
