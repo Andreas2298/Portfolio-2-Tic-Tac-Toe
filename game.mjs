@@ -144,7 +144,7 @@ function showGameSummary(outcome) {
 }
 
 function changeCurrentPlayer() {
-    currentPlayer *= -1;
+    currentPlayer (currentPlayer == PLAYER_ONE) ? PLAYER_TWO : PLAYER_ONE;
 }
 
 function evaluateGameState() {
