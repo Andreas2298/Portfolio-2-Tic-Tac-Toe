@@ -103,6 +103,7 @@ async function showMenu() {
     return choice;
 }
 
+const NOT_FINISHED = 0;
 async function playGame() {
     // Play game..
     let outcome;
@@ -114,7 +115,7 @@ async function playGame() {
         updateGameBoardState(move);
         outcome = evaluateGameState();
         changeCurrentPlayer();
-    } while (outcome == 0)
+    } while (outcome == NOT_FINISHED)
 
     showGameSummary(outcome);
 
