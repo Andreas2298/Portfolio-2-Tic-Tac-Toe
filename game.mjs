@@ -246,10 +246,13 @@ function isValidPositionOnBoard(position) {
     return isValidInput;
 }
 
+const DESCRIPTION_PLAYER_ONE = "one";
+const DESCRIPTION_PLAYER_TWO = "two";
+
 function showHUD() {
-    let playerDescription = "one";
+    let playerDescription = DESCRIPTION_PLAYER_ONE;
     if (PLAYER_2 == currentPlayer) {
-        playerDescription = "two";
+        playerDescription = DESCRIPTION_PLAYER_TWO;
     }
     print("Player " + playerDescription + " it is your turn");
 }
