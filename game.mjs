@@ -35,7 +35,7 @@ setTimeout(start, 2500);
 langChoice(1);
 
 
-//#region game functions -----------------------------
+
 async function langChoice(chosenAction){
     if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_EN) {
         language = DICTIONARY.en;
