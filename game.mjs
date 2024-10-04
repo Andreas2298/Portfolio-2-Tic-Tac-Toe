@@ -90,15 +90,18 @@ async function showMenu() {
         // Display our menu to the player.
         clearScreen();
         print(ANSI.COLOR.YELLOW + "MENU" + ANSI.RESET);
-        print(`{$MENU_CHOICES.MENU_CHOICE_START_GAME} 1. Play Game`);
-        print(`{$MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS} 2. Settings`);
-        print(`{$MENU_CHOICES.MENU_CHOICE_EXIT_GAME} 3. Exit Game`);
+        print("1. Play Game");
+        print("2. Settings");
+        print("3. Exit Game");
+        print("4. English");
+        print("5. Norwegian");
+        
 
         // Wait for the choice.
         choice = await askQuestion("");
 
         // Check to see if the choice is valid.
-        if ([MENU_CHOICES.MENU_CHOICE_START_GAME, MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS, MENU_CHOICES.MENU_CHOICE_EXIT_GAME].includes(Number(choice))) {
+        if ([MENU_CHOICES.MENU_CHOICE_START_GAME, MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS, MENU_CHOICES.MENU_CHOICE_EXIT_GAME, MENU_CHOICES.MENU_CHOICE_LAN_EN, MENU_CHOICES.MENU_CHOICE_LAN_NO ].includes(Number(choice))) {
             validChoice = true;
         }
     }
