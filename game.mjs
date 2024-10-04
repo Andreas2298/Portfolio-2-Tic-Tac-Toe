@@ -257,18 +257,23 @@ function showHUD() {
     print("Player " + playerDescription + " it is your turn");
 }
 
+const SYMBOL_X_PLAYER = "X ";
+const SYMBOL_O_PLAYER = "O ";
+const SYMBOL_EMPTY_CELL = "_ ";
+const EMPTY_CELL = 0;
+
 function showGameBoardWithCurrentState() {
     for (let currentRow = 0; currentRow < GAME_BOARD_SIZE; currentRow++) {
         let rowOutput = "";
         for (let currentCol = 0; currentCol < GAME_BOARD_SIZE; currentCol++) {
             let cell = gameboard[currentRow][currentCol];
-            if (cell == 0) {
-                rowOutput += "_ ";
+            if (cell == EMPTY_CELL) {
+                rowOutput += SYMBOL_EMPTY_CELL;
             }
-            else if (cell > 0) {
-                rowOutput += "X ";
+            else if (cell > EMPTY_CELL) {
+                rowOutput += SYMBOL_X_PLAYER;
             } else {
-                rowOutput += "O  ";
+                rowOutput += SYMBOL_O_PLAYER;
             }
         }
 
