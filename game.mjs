@@ -79,16 +79,17 @@ async function runGame() {
 
 async function showMenu() {
 
-    let choice = -1;  // This variable tracks the choice the player has made. We set it to -1 initially because that is not a valid choice.
-    let validChoice = false;    // This variable tells us if the choice the player has made is one of the valid choices. It is initially set to false because the player has made no choices.
+    const CHOICE_INVALID = -1;
+    let choice = CHOICE_INVALID;
 
+    let validChoice = false;    
     while (!validChoice) {
         // Display our menu to the player.
         clearScreen();
         print(ANSI.COLOR.YELLOW + "MENU" + ANSI.RESET);
-        print("1. Play Game");
-        print("2. Settings");
-        print("3. Exit Game");
+        print(`{$MENU_CHOICES.MENU_CHOICE_START_GAME} 1. Play Game`);
+        print(`{$MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS} 2. Settings`);
+        print(`{$MENU_CHOICES.MENU_CHOICE_EXIT_GAME} 3. Exit Game`);
 
         // Wait for the choice.
         choice = await askQuestion("");
