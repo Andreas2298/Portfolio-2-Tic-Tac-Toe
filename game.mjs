@@ -122,14 +122,16 @@ async function playGame() {
     return await askWantToPlayAgain();
 }
 
+const YES_CONFIRMED = 'y';
 async function askWantToPlayAgain() {
     let answer = await askQuestion(language.PLAY_AGAIN_QUESTION);
     let playAgain = true;
-    if (answer && answer.toLowerCase()[0] != language.CONFIRM) {
+    if (answer && answer.toLowerCase()[0] != YES_CONFIRMED) {
         playAgain = false;
     }
     return playAgain;
 }
+
 
 function showGameSummary(outcome) {
     clearScreen();
