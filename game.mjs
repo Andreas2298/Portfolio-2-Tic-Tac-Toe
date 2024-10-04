@@ -202,9 +202,9 @@ function evaluateGameState() {
 }
 
 function updateGameBoardState(move) {
-    const ROW_ID = 0;
-    const COLUMN_ID = 1;
-    gameboard[move[ROW_ID]][move[COLUMN_ID]] = currentPlayer;
+    const ROW_INDEX = 0;
+    const COLUMN_INDEX = 1;
+    gameboard[move[ROW_INDEX]][move[COLUMN_INDEX]] = currentPlayer;
 }
 
 async function getGameMoveFromtCurrentPlayer() {
