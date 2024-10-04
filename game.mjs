@@ -221,18 +221,20 @@ async function getGameMoveFromtCurrentPlayer() {
     return position
 }
 
+const POSITION_MIN = 2;
+const NO_BOARD_POSITION = GAME_BOARD_SIZE;
+
 function isValidPositionOnBoard(position) {
 
-    if (position.length < 2) {
-        // We where not given two numbers or more.
+    if (position.length < POSITION_MIN) {
+       
         return false;
     }
 
     let isValidInput = true;
     if (position[0] * 1 != position[0] && position[1] * 1 != position[1]) {
-        // Not Numbers
         inputWasCorrect = false;
-    } else if (position[0] > GAME_BOARD_SIZE && position[1] > GAME_BOARD_SIZE) {
+    } else if (position[0] > NO_BOARD_POSITION && position[1] > NO_BOARD_POSITION) {
         // Not on board
         inputWasCorrect = false;
     }
@@ -240,7 +242,6 @@ function isValidPositionOnBoard(position) {
         // Position taken.
         inputWasCorrect = false;
     }
-
 
     return isValidInput;
 }
