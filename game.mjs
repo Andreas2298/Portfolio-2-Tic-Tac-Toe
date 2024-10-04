@@ -159,7 +159,7 @@ function evaluateGameState() {
             sum += gameboard[row][col];
         }
 
-        if (Math.abs(sum) == WINSUM) {
+        if (Math.abs(sum) == WIN_SUM) {
             state = sum;
         }
         sum = 0;
