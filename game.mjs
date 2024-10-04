@@ -207,13 +207,15 @@ function updateGameBoardState(move) {
     gameboard[move[ROW_INDEX]][move[COLUMN_INDEX]] = currentPlayer;
 }
 
+const ADJUSTMENT_NUMBER = 1;
+
 async function getGameMoveFromtCurrentPlayer() {
     let position = null;
      do {
         let rawInput = await askQuestion(language.PLASS);
         position = rawInput.split(" ");
-        position[0] = position[0]-1           
-        position[1] = position[1]-1
+        position[0] = position[0]- ADJUSTMENT_NUMBER;           
+        position[1] = position[1]- ADJUSTMENT_NUMBER;
     } while (isValidPositionOnBoard(position) == false)
 
     return position
