@@ -31,7 +31,7 @@ let currentPlayer;
 
 clearScreen();
 showSplashScreen();
-setTimeout(start, 2500); // This waites 2.5seconds before calling the function. i.e. we get to see the splash screen for 2.5 seconds before the menue takes over. 
+setTimeout(start, 2500); 
 langChoice(1);
 
 
@@ -74,9 +74,9 @@ async function runGame() {
 
     let isPlaying = true;
 
-    while (isPlaying) { // Do the following until the player dos not want to play anymore. 
-        initializeGame(); // Reset everything related to playing the game
-        isPlaying = await playGame(); // run the actual game 
+    while (isPlaying) { 
+        initializeGame();
+        isPlaying = await playGame(); 
     }
 }
 
@@ -311,5 +311,5 @@ function clearScreen() {
 }
 
 
-//#endregion
+
 
