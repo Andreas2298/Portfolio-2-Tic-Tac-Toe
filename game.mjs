@@ -8,7 +8,9 @@ const GAME_BOARD_SIZE = 3;
 const PLAYER_1 = 1;
 const PLAYER_2 = -1;
 
-// These are the valid choices for the menu.
+const NO_CHOICE = -1;
+const EXIT_SUCCESS = 0;
+
 const MENU_CHOICES = {
     MENU_CHOICE_START_GAME: 1,
     MENU_CHOICE_SHOW_SETTINGS: 2,
@@ -31,15 +33,17 @@ langChoice(1);
 
 
 //#region game functions -----------------------------
-async function langChoice(x){
-    if (x==4) {
+async function langChoice(chosenAction){
+    if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_EN) {
         language = DICTIONARY.en;
     }
-    if (x==5) {
+    if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_NO ) {
         language = DICTIONARY.no;
     }
     
 }
+
+
 async function start() {
 
     do {
@@ -52,7 +56,7 @@ async function start() {
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_SHOW_SETTINGS) {
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_EXIT_GAME) {
             clearScreen();
-           process.exit();
+           process.exit(EXIT_SUCCESS);
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_EN){
             langChoice(chosenAction);
         } else if (chosenAction == MENU_CHOICES.MENU_CHOICE_LAN_NO){
