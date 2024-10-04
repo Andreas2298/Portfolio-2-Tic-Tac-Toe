@@ -293,7 +293,7 @@ function createGameBoard() {
     for (let currentRow = 0; currentRow < GAME_BOARD_SIZE; currentRow++) {
         let row = new Array(GAME_BOARD_SIZE);
         for (let currentColumn = 0; currentColumn < GAME_BOARD_SIZE; currentColumn++) {
-            row[currentColumn] = 0;
+            row[currentColumn] = EMPTY_CELL;
         }
         newBoard[currentRow] = row;
     }
