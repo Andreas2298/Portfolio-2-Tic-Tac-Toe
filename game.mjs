@@ -10,7 +10,9 @@ const PLAYER_2 = -1;
 
 const NO_CHOICE = -1;
 const EXIT_SUCCESS = 0;
-
+const WINNER_MESSAGE = "The winner is "
+const GAME_OVER_MESSAGE = "Game over!";
+    
 const MENU_CHOICES = {
     MENU_CHOICE_START_GAME: 1,
     MENU_CHOICE_SHOW_SETTINGS: 2,
@@ -135,10 +137,10 @@ async function askWantToPlayAgain() {
 
 function showGameSummary(outcome) {
     clearScreen();
-    let winningPlayer = (outcome > 0) ? 1 : 2;
-    print("Winner is player " + winningPlayer);
+    let winningPlayer = (outcome > 0) ? PLAYER_1 : PLAYER_2;
+    print(WINNER_MESSAGE + winningPlayer);
     showGameBoardWithCurrentState();
-    print("GAME OVER");
+    print(GAME_OVER_MESSAGE);
 }
 
 function changeCurrentPlayer() {
